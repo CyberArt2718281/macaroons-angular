@@ -40,8 +40,7 @@
     <div class="advantages-numbers wow animate__backInUp">
       <div
         class="advantages-number"
-        *ngFor="let advantage of advantagesItems; let i = index"
-        trackByAdvantage
+        *ngFor="let advantage of advantagesItems; let i = index; trackBy:trackByAdvantage"
       >
         <div class="advantages-number-circle">{{ i + 1 }}</div>
         <div class="advantages-number-title">{{ advantage.title }}</div>
@@ -61,8 +60,7 @@
     <div class="products-items">
       <div
         class="product-item wow animate__fadeInUp"
-        *ngFor="let macaroon of macaroonsItems; let i = index"
-        trackByMacaroons
+        *ngFor="let macaroon of macaroonsItems; let i = index; trackBy:trackByMacaroons"
       >
         <div class="product-item-image">
           <img

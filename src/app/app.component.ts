@@ -60,11 +60,11 @@ export class AppComponent {
       text: 'Вкус, качество и безопасность наших пирогов подтверждена декларацией о соответствии, которую мы получили 22.06.2016 г.',
     },
   ];
-  public trackByAdvantage(index: number, advantage: Advantage): string {
-    return advantage.title + advantage.text;
+  public trackByAdvantage(index: number ):  number {
+    return  index;
   }
-  public trackByMacaroons(index: number, macaroon: Advantage): string {
-    return macaroon.title;
+  public trackByMacaroons(index: number):  number{
+    return  index;
   }
 
   public clickScrollTo(target: HTMLElement) {
