@@ -1,0 +1,27 @@
+$background-primary: #eba8b1;
+$background-secondary: #ffefef;
+$background-footer: #c0707c;
+
+$link-hover: rgb(130, 19, 40);
+
+$button-background: rgb(215, 72, 92);
+
+$advantages-text: rgb(51, 25, 7);
+
+$text-color-gift: rgb(119, 10, 29);
+
+$text-title: rgb(18, 10, 6);
+$text-color-white: rgb(255, 255, 255);
+$text-color-white-second: #feefee;
+
+$font-primary: Gilroy-Regular, sans-serif;
+$font-bold: Gilroy-Bold, sans-serif;
+$font-extra-bold: Gilroy-ExtraBold, sans-serif;
+$font-medium: Gilroy-Medium, sans-serif;
+$font-tavolga: Tavolga-Free, sans-serif;
+
+@mixin flex-box(){
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

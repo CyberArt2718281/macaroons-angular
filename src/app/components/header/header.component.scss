@@ -1,0 +1,51 @@
+@import '../../../variables.scss';
+
+.header {
+  padding: 36px 0 29px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99909999;
+  background: $background-primary;
+
+  .header-container {
+    @include flex-box();
+    position: relative;
+
+    .menu-list {
+      list-style: none;
+      @include flex-box();
+      flex-flow: row nowrap;
+      width: 314px;
+
+      .menu-item {
+        padding-bottom: 4px;
+        border-bottom: 2px solid transparent;
+        transition: all 0.5s ease;
+
+        a {
+          font-size: 14px;
+          font-family: $font-medium;
+          color: rgb(119, 11, 29);
+          text-decoration: none;
+        }
+        &:hover {
+          border-bottom: 2px solid $link-hover;
+        }
+      }
+    }
+
+    .header-number {
+      font-size: 16px;
+      font-family: $font-bold;
+      color: $text-color-white;
+    }
+  }
+}
+
+.header-burger {
+  display: none;
+}
+
+.menu-close {
+  display: none;
+}

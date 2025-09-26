@@ -1,0 +1,32 @@
+@import '../../../variables.scss';
+
+.footer {
+  background: $background-footer;
+  .footer-container {
+    padding: 73px 15px 63px 15px;
+    @include flex-box();
+    .footer-logo-rights {
+      margin-top: 19px;
+      font-size: 12px;
+      font-family: $font-primary;
+      color: rgb(227, 172, 180);
+    }
+    .footer-message-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .footer-message-text {
+      font-size: 16px;
+      font-family: $font-bold;
+      color: $text-color-white;
+    }
+
+    .footer-number {
+      font-size: 16px;
+      font-family: $font-bold;
+      color: $text-color-white;
+    }
+  }
+}

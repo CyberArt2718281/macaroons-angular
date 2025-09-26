@@ -1,1 +1,179 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: Gilroy-Regular;
+  src: url("assets/fonts/Gilroy-Regular.ttf");
+}
+
+@font-face {
+  font-family: Gilroy-ExtraBold;
+  src: url("assets/fonts/Gilroy-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: Gilroy-Medium;
+  src: url("assets/fonts/Gilroy-Medium.ttf");
+}
+
+@font-face {
+  font-family: Gilroy-Bold;
+  src: url("assets/fonts/Gilroy-Bold.ttf");
+}
+
+@font-face {
+  font-family: Tavolga-Free;
+  src: url("assets/fonts/Tavolga-Free.otf");
+}
+
+body {
+  font-family: $font-primary;
+  background: $background-primary;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.logo {
+  font-size: 18px;
+  font-family: $font-tavolga;
+  color: $text-color-white;
+  text-transform: uppercase;
+}
+
+@keyframes circle-animation {
+  0% {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+  }
+  100% {
+    width: 650px;
+    height: 650px;
+    opacity: 0;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes strawberry-animation {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(30px);
+  }
+}
+
+.button {
+  background: linear-gradient(
+    0deg,
+    rgb(113, 8, 30) 0%,
+    $button-background 100%
+  );
+
+  font-size: 18px;
+  font-family: $font-bold;
+  color: $text-color-white;
+  padding: 22px 43px 21px 42px;
+  white-space: nowrap;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 0 5px 9px 1px rgba(130, 19, 40, 0.5);
+  }
+}
+
+
+
+.gift-text-block {
+  opacity: 1 !important ;
+  transform: translateY(0) !important;
+}
+.gift-text-block-close {
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+
+.error {
+  opacity: 0;
+  color: red;
+  font-family: $font-primary;
+  margin-bottom: 5px;
+  font-size: 15px;
+  text-align: start;
+  max-width: 293px;
+}
+
+.input-error {
+  border-color: red !important;
+}
+
+.loader-block {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.55);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid $background-primary;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+}
+
+.order-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 24px;
+  font-family: $font-bold;
+  color: $text-color-gift;
+  text-align: center;
+}
+
+.theme-toggle {
+  margin-left: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: $button-background;
+  color: $text-color-white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: darken($button-background, 10%);
+}
