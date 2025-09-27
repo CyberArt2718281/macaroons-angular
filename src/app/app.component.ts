@@ -7,6 +7,7 @@ import { Advantage, Macaroons } from './interfaces/app.component.type';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  numberPhone = '+375 (29) 368-98-68';
   public formValues = {
     macaroonTitle: '',
     name: '',

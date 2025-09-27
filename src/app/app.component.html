@@ -1,3 +1,4 @@
+<app-header  [numberPhone]='numberPhone'></app-header>
 <main class="main">
   <div class="container main-container">
     <div class="main-info wow animate__backInLeft">
@@ -150,14 +151,9 @@
     />
   </div>
 </section>
-
+<app-footer [numberPhone]='numberPhone'></app-footer>
 <div class="body-gifts" (click)="clickGif()">
-  <div
-    [ngClass]="{
-      'gift-text-block': showPresent,
-      'gift-text-block-close': !showPresent
-    }"
-  >
+  <div *ngIf="showPresent" class="gift-text-block">
     <div class="main-block-figure">
       <span>Оформите заказ</span>
       <span>и получите подарок!</span>
