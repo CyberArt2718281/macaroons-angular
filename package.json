@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
-    "start": "ng serve --host 127.0.0.1  --disable-host-check",
+    "start": "ng serve --host 127.0.0.1  --disable-host-check --open",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

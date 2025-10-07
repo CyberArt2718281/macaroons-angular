@@ -1,0 +1,7 @@
+<div class="advantages-number">
+  <div class="advantages-number-circle">{{ index + 1 }}</div>
+  <div class="advantages-number-title">{{ advantage.title }}</div>
+  <div class="advantages-number-description" title="{{ advantage.text }}">
+    {{ advantage.text | customTextPipe }}
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<app-header  [numberPhone]='numberPhone'></app-header>
+<app-header [numberPhone]="numberPhone |customPhonePipe"></app-header>
 <main class="main">
   <div class="container main-container">
     <div class="main-info wow animate__backInLeft">
@@ -8,7 +8,7 @@
         пироженками Macaroon!
       </div>
       <div class="main-info-action">
-        <button class="button main-button" (click)="clickScrollTo(products)">
+        <button class="button main-button" (click)="clickScrollTo(products)" button-hover>
           Выбрать макарун
         </button>
       </div>
@@ -39,16 +39,17 @@
     </div>
 
     <div class="advantages-numbers wow animate__backInUp">
-      <div
-        class="advantages-number"
-        *ngFor="let advantage of advantagesItems; let i = index; trackBy:trackByAdvantage"
+      <app-advantage
+        
+        *ngFor="
+          let advantage of advantagesItems;
+          let i = index;
+          trackBy: trackByAdvantage
+        "
+        [advantage]="advantage"
+        [index]="i"
       >
-        <div class="advantages-number-circle">{{ i + 1 }}</div>
-        <div class="advantages-number-title">{{ advantage.title }}</div>
-        <div class="advantages-number-description">
-          {{ advantage.text }}
-        </div>
-      </div>
+      </app-advantage>
     </div>
   </div>
 </section>
@@ -59,33 +60,17 @@
       Выберите свой макарун
     </div>
     <div class="products-items">
-      <div
+      <app-product
         class="product-item wow animate__fadeInUp"
-        *ngFor="let macaroon of macaroonsItems; let i = index; trackBy:trackByMacaroons"
-      >
-        <div class="product-item-image">
-          <img
-            src="../assets/images/{{ macaroon.image }}"
-            alt="macaroon {{ i + 1 }}"
-          />
-        </div>
-
-        <div class="product-item-title">{{ macaroon.title }}</div>
-        <div class="product-item-group">
-          <div class="product-item-info">
-            <div class="product-item-quantity">{{ macaroon.counts }} шт.</div>
-            <div class="product-item-price">{{ macaroon.price }} руб.</div>
-          </div>
-          <div class="product-action">
-            <button
-              class="button button-product-item"
-              (click)="addMacaroons(macaroon.title, order)"
-            >
-              Заказать
-            </button>
-          </div>
-        </div>
-      </div>
+        *ngFor="
+          let macaroon of macaroonsItems;
+          let i = index;
+          trackBy: trackByMacaroons
+        "
+        [macaroon]="macaroon"
+        [index]="i"
+        (addProductEvent)="addMacaroons($event, order)"
+      ></app-product>
     </div>
   </div>
 </section>
@@ -139,6 +124,7 @@
           class="button button-order-form"
           type="button"
           (click)="CreateOrder()"
+          button-hover
         >
           Оформить заказ
         </button>
@@ -151,54 +137,8 @@
     />
   </div>
 </section>
-<app-footer [numberPhone]='numberPhone'></app-footer>
-<div class="body-gifts" (click)="clickGif()">
-  <div *ngIf="showPresent" class="gift-text-block">
-    <div class="main-block-figure">
-      <span>Оформите заказ</span>
-      <span>и получите подарок!</span>
-    </div>
-    <div class="addition-figure">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        width="18px"
-        height="28px"
-      >
-        <path
-          fill-rule="evenodd"
-          stroke="rgb(119, 10, 29)"
-          stroke-width="2px"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          fill="rgb(254, 239, 238)"
-          d="M15.508,13.401 L1.692,25.264 L1.692,1.538 L15.508,13.401 Z"
-        />
-      </svg>
-    </div>
-    <div class="addition-figure-two">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        width="18px"
-        height="28px"
-      >
-        <path
-          fill-rule="evenodd"
-          stroke="rgb(119, 10, 29)"
-          stroke-width="2px"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          fill="rgb(254, 239, 238)"
-          d="M15.508,13.401 L1.692,25.264 L1.692,1.538 L15.508,13.401 Z"
-        />
-      </svg>
-    </div>
-  </div>
-  <div class="image-fon">
-    <img src="../assets/images/gift.png" alt="gift" class="box-gift" />
-  </div>
-</div>
+<app-footer [numberPhone]="numberPhone |customPhonePipe"></app-footer>
+<app-gift-box></app-gift-box>
 
 <div class="loader-block">
   <span class="loader"></span>

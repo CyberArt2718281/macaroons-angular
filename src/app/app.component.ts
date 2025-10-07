@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Advantage, Macaroons } from './interfaces/app.component.type';
+import { MacaroonServiceService } from './services/macaroon-service.service';
+import { AdvantageServiceService } from './services/advantage-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,76 +9,38 @@ import { Advantage, Macaroons } from './interfaces/app.component.type';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  numberPhone = '+375 (29) 368-98-68';
+  numberPhone = '375293689868';
   public formValues = {
     macaroonTitle: '',
     name: '',
     phone: '',
   };
-  public showPresent = false;
-  public clickGif(){
-    this.showPresent = !this.showPresent;
+  public advantagesItems: Advantage[];
+  public macaroonsItems: Macaroons[];
+  constructor(
+    private macaroonServiceService: MacaroonServiceService,
+    private advantageServiceService: AdvantageServiceService
+  ) {
+    this.macaroonsItems = this.macaroonServiceService.getMacaroons();
+    this.advantagesItems = this.advantageServiceService.getAdvantages();
   }
-  public macaroonsItems: Macaroons[] = [
-    {
-      image: '1.png',
-      title: 'Макарун с малиной',
-      counts: 3,
-      price: 170,
-    },
-    {
-      image: '2.png',
-      title: 'Макарун с манго',
-      counts: 5,
-      price: 120,
-    },
-    {
-      image: '3.png',
-      title: 'Пирог с ванилью',
-      counts: 10,
-      price: 150,
-    },
-    {
-      image: '4.png',
-      title: 'Пирог с фисташками',
-      counts: 15,
-      price: 300,
-    },
-  ];
-  public advantagesItems: Advantage[] = [
-    {
-      title: 'Лучшие продукты',
-      text: 'Мы честно готовим макаруны только из натуральных и качественных продуктов. Мы не используем консерванты, ароматизаторы и красители.',
-    },
-    {
-      title: 'Много вкусов',
-      text: 'Наша задача – предоставить вам широкое разнобразие вкусов. Вы удивитесь, но у нас более 70 вкусов пироженок.',
-    },
-    {
-      title: 'Бисквитное тесто',
-      text: 'Все пирожные готовятся на бисквитном тесте с качественным сливочным маслом 82,5%. В составе нет маргарина и дрожжей!',
-    },
-    {
-      title: 'Честный продукт',
-      text: 'Вкус, качество и безопасность наших пирогов подтверждена декларацией о соответствии, которую мы получили 22.06.2016 г.',
-    },
-  ];
-  public trackByAdvantage(index: number ):  number {
-    return  index;
+
+  public trackByAdvantage(index: number): number {
+    return index;
   }
-  public trackByMacaroons(index: number):  number{
-    return  index;
+  public trackByMacaroons(index: number): number {
+    return index;
   }
 
   public clickScrollTo(target: HTMLElement) {
     target.scrollIntoView({ behavior: 'smooth' });
   }
-  public addMacaroons(macaroonTitle:string, order:HTMLElement){
-    this.formValues.macaroonTitle = macaroonTitle.toUpperCase();
-    this.clickScrollTo(order)
+  public addMacaroons(macaroon: Macaroons, order: HTMLElement) {
+    alert(`${macaroon.title} добавлен в корзину!`)
+    this.formValues.macaroonTitle = macaroon.title.toUpperCase();
+    this.clickScrollTo(order);
   }
-  public CreateOrder()
-  {
+  public CreateOrder() {
     if (!this.formValues.macaroonTitle) {
       alert('Введите название');
       return;

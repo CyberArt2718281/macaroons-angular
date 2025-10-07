@@ -9,8 +9,8 @@
   }
 
   .advantages-numbers {
-    gap: 54px 86px;
     place-content: center;
+    gap: 54px 86px;
 
     .advantages-number-four {
       grid-column: 2/3;
@@ -19,9 +19,9 @@
   }
 
   .products-items {
-    column-gap: 29px;
-    row-gap: 136px;
     place-content: center;
+    row-gap: 136px;
+    column-gap: 29px;
 
     .product-item-four {
       grid-column: 2/3;
@@ -68,8 +68,8 @@
     padding: 97px 55px 0 15px;
 
     .main-container {
-      padding: unset;
       display: unset;
+      padding: unset;
     }
 
     .main-info-title {
@@ -81,10 +81,10 @@
     }
 
     .main-image {
-      max-width: 520px;
-      max-height: 430px;
       bottom: 62px;
       justify-self: end;
+      max-width: 520px;
+      max-height: 430px;
     }
   }
 
@@ -96,12 +96,12 @@
       place-items: center;
 
       .advantages-info-title {
+        justify-self: center;
         text-align: center;
-        justify-self: center
       }
 
       .advantages-number-circle {
-        justify-self: center
+        justify-self: center;
       }
 
       .advantages-number {
@@ -109,14 +109,14 @@
       }
 
       .advantages-info {
+        z-index: 99;
         max-width: 667px;
         margin-left: unset;
-        z-index: 99;
 
         .advantages-info-description {
           max-width: 100%;
-          text-align: center;
           margin-bottom: 40px;
+          text-align: center;
         }
       }
 
@@ -129,13 +129,13 @@
 
   .order {
     .order-container {
-      padding: 97px 19px 120px 18px;
-      align-items: unset;
       position: relative;
+      align-items: unset;
+      padding: 97px 19px 120px 18px;
 
       .strawberry-one {
-        left: 372px;
         top: 350px;
+        left: 372px;
         z-index: 1;
       }
 
@@ -146,18 +146,18 @@
       }
 
       .order-image img {
-        max-width: 280px;
         position: absolute;
         top: 50%;
         left: 50%;
+        max-width: 280px;
         translate: -50% -50%;
       }
 
       .order-image {
         position: absolute;
-        order: 2;
         top: 358px;
         left: 398px;
+        order: 2;
         max-width: 352px;
       }
 
@@ -189,10 +189,10 @@
     padding: 63px 55px 37px 15px;
 
     .main-image {
-      max-width: 520px;
-      max-height: 430px;
       bottom: unset;
       justify-self: end;
+      max-width: 520px;
+      max-height: 430px;
       margin-top: 37px;
       padding-right: unset;
     }
@@ -204,9 +204,9 @@
 
       .order-image {
         position: absolute;
-        order: 2;
         top: 358px;
         left: 250px;
+        order: 2;
         max-width: unset;
       }
 
@@ -216,8 +216,8 @@
       }
 
       .strawberry-one {
-        left: 75px;
         top: 400px;
+        left: 75px;
       }
 
       .strawberry-two {
@@ -265,23 +265,23 @@
       }
 
       .menu {
-        display: none;
         position: fixed;
-        width: 100%;
-        height: 100%;
-        align-items: center;
+        top: 0;
+        display: none;
         flex-direction: column;
         justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 100%;
         margin: 0;
-        top: 0;
         background: #000000b0;
 
         &.open {
+          right: 0;
+          left: 0;
+          z-index: 9999;
           display: flex;
           justify-content: center;
-          z-index: 9999;
-          left: 0;
-          right: 0;
         }
 
         .menu-list {
@@ -291,20 +291,20 @@
             margin-bottom: 30px;
 
             a {
-              font-size: 20px;
               color: #ca455e;
+              font-size: 20px;
             }
           }
         }
 
         .menu-close {
-          display: block;
-          height: 24px;
-          width: 24px;
-          fill: #821328;
           position: absolute;
           top: 20px;
           right: 20px;
+          display: block;
+          width: 24px;
+          height: 24px;
+          fill: #821328;
         }
       }
     }
@@ -318,15 +318,15 @@
         margin-bottom: 38px;
 
         .main-info-title {
-          font-size: 36px;
-          color: rgb(255, 255, 255);
-          line-height: 1.25;
           margin-bottom: 40px;
+          color: rgb(255, 255, 255);
+          font-size: 36px;
+          line-height: 1.25;
         }
 
         .main-info-description {
-          font-size: 16px;
           color: rgb(255, 255, 255);
+          font-size: 16px;
           line-height: 1.438;
           text-align: center;
         }
@@ -358,16 +358,16 @@
     }
 
     .advantages-info-title {
-      font-size: 30px;
+      margin-bottom: 40px;
       color: rgb(51, 25, 7);
+      font-size: 30px;
       line-height: 1.167;
       text-align: center;
-      margin-bottom: 40px;
     }
 
     .advantages-info-description {
-      font-size: 16px;
       color: rgb(51, 25, 7);
+      font-size: 16px;
       line-height: 1.437;
       text-align: center;
     }
@@ -381,13 +381,13 @@
       gap: 36px 15px;
 
       .advantages-number-title {
-        font-size: 18px;
         color: rgb(51, 25, 7);
+        font-size: 18px;
       }
 
       .advantages-number-description {
-        font-size: 13px;
         color: rgb(51, 25, 7);
+        font-size: 13px;
         line-height: 1.385;
       }
 
@@ -404,11 +404,11 @@
       padding: unset;
 
       .products-title {
-        font-size: 30px;
+        margin-bottom: 122px;
         color: rgb(255, 255, 255);
+        font-size: 30px;
         line-height: 1.833;
         text-align: center;
-        margin-bottom: 122px;
       }
     }
 
@@ -444,22 +444,22 @@
         text-align: unset;
 
         .order-info-title {
-          font-size: 30px;
-          color: rgb(51, 25, 7);
           margin-bottom: 44px;
+          color: rgb(51, 25, 7);
+          font-size: 30px;
         }
 
         .order-info-text {
-          font-size: 16px;
-          color: rgb(51, 25, 7);
-          line-height: 1.437;
           margin-bottom: 59px;
+          color: rgb(51, 25, 7);
+          font-size: 16px;
+          line-height: 1.437;
         }
 
         .order-info-choice-title {
-          font-size: 18px;
-          color: rgb(18, 10, 6);
           margin-bottom: 22px;
+          color: rgb(18, 10, 6);
+          font-size: 18px;
         }
 
         .input {
@@ -476,23 +476,23 @@
 
 
   .footer-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 0 50px 0;
     position: relative;
+    flex-direction: column;
+    padding: 50px 0 50px 0;
+    text-align: center;
 
     .footer-logo {
-      margin-top: unset;
       order: 1;
+      margin-top: unset;
       margin-bottom: 40px;
     }
 
     .footer-logo-rights {
-      order: 99;
-      margin-top: unset;
       position: absolute;
       top: 279px;
       left: 50%;
+      order: 99;
+      margin-top: unset;
       transform: translateX(-50%);
     }
 
