@@ -1,31 +1,31 @@
 @import '../../../variables.scss';
 
 .header {
-  padding: 36px 0 29px 0;
   position: fixed;
-  width: 100%;
   z-index: 99909999;
+  width: 100%;
+  padding: 36px 0 29px 0;
   background: $background-primary;
 
   .header-container {
-    @include flex-box();
     position: relative;
+    @include flex-box();
 
     .menu-list {
-      list-style: none;
-      @include flex-box();
       flex-flow: row nowrap;
       width: 314px;
+      list-style: none;
+      @include flex-box();
 
       .menu-item {
-        padding-bottom: 4px;
         border-bottom: 2px solid transparent;
+        padding-bottom: 4px;
         transition: all 0.5s ease;
 
         a {
-          font-size: 14px;
-          font-family: $font-medium;
           color: rgb(119, 11, 29);
+          font-family: $font-medium;
+          font-size: 14px;
           text-decoration: none;
         }
         &:hover {
@@ -35,9 +35,9 @@
     }
 
     .header-number {
-      font-size: 16px;
-      font-family: $font-bold;
       color: $text-color-white;
+      font-family: $font-bold;
+      font-size: 16px;
     }
   }
 }

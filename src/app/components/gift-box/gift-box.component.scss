@@ -1,0 +1,73 @@
+@import "../../../variables.scss";
+.cart {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  .image-fon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #b23146;
+    cursor: pointer;
+    svg {
+      fill: #fff;
+      width: 50px;
+      height: 50px;
+    }
+    .cart-count {
+      width: 30px;
+      height: 30px;
+      color: $text-color-gift;
+      font-size: 20px;
+
+      display: flex;
+      border: 1px solid $text-color-gift;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #fff;
+    }
+  }
+  .gift-text-block {
+    position: relative;
+    display: block;
+    margin-right: 20px;
+    border: 2px solid $text-color-gift;
+    border-radius: 10px;
+    padding: 16px 10px 14px 10px;
+    background: $text-color-white-second;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    .main-block-figure {
+      display: flex;
+      flex-direction: column;
+      color: $text-color-gift;
+      font-family: $font-medium;
+      font-size: 15px;
+      line-height: 1.333;
+    }
+    .addition-figure {
+      position: absolute;
+      top: calc(50% - 9px);
+      right: -18px;
+    }
+    .addition-figure-two {
+      position: absolute;
+      top: calc(50% - 9px);
+      right: -15px;
+      z-index: 9999999;
+      svg path {
+        stroke: $text-color-white-second;
+      }
+    }
+  }
+}

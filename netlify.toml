@@ -1,0 +1,9 @@
+[build]
+  publish = "dist/macaroons_angular"
+  command = "npm run build -- --configuration production"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+

@@ -1,0 +1,19 @@
+<div class="product-item-image">
+  <img
+    src="../assets/images/{{ macaroon.image }}"
+    alt="macaroon {{ index + 1 }}"
+  />
+</div>
+
+<div class="product-item-title">{{ macaroon.title }}</div>
+<div class="product-item-group">
+  <div class="product-item-info">
+    <div class="product-item-quantity">{{ macaroon.counts }} шт.</div>
+    <div class="product-item-price">{{ macaroon.price|currencyPipe }}</div>
+  </div>
+  <div class="product-action">
+    <button class="button button-product-item" (click)="addMacaroons(macaroon)" button-hover>
+      Заказать
+    </button>
+  </div>
+</div>

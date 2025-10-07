@@ -98,11 +98,7 @@ body {
   border-radius: 30px;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
-  &:hover {
-    box-shadow: 0 5px 9px 1px rgba(130, 19, 40, 0.5);
-  }
 }
-
 
 .error {
   opacity: 0;

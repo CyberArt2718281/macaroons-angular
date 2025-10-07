@@ -1,0 +1,41 @@
+@import "../../../variables.scss";
+
+.product-item-image {
+  display: flex;
+  justify-self: center;
+  align-items: end;
+  height: 124px;
+  img {
+    position: relative;
+    top: -48px;
+    transition: all 0.3s ease;
+  }
+}
+.product-item:hover .product-item-image img {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+}
+.product-item-title {
+  margin-bottom: 26px;
+  color: $text-color-white;
+  font-family: $font-tavolga;
+  font-size: 18px;
+  text-align: center;
+}
+.product-item-group {
+  @include flex-box();
+  .product-item-info {
+    color: $text-color-white;
+
+    font-family: $font-primary;
+    font-size: 15px;
+  }
+
+  .button-product-item {
+    padding: 19px 29px 20px 29px;
+  }
+
+  .product-item-quantity {
+    margin-bottom: 16px;
+  }
+}
